@@ -31,7 +31,7 @@ const Hero = () => {
         <img
           src={Smile}
           alt="Smiling Man"
-          className="absolute bottom-0 left-[30%] w-[40%] h-auto object-cover z-10"
+          className="absolute bottom-0 left-[25%] w-[40%] h-auto object-cover z-10"
         />
         
       </div>
