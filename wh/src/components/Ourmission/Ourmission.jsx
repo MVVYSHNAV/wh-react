@@ -11,7 +11,7 @@ const Ourmission = () => {
         <img
             src={Ourimg}
             alt=""
-            className="p-5 w-[668px] h-[70vh] md:h-[90vh] mt-5 md:mt-18"
+            className="p-5 w-[668px] h-[50vh] md:h-[90vh] mt-5"
             />
             </div>
         <div>
@@ -24,7 +24,7 @@ const Ourmission = () => {
         </div>
         
         </div>
-        <div className="absolute top-[90%] left-1/2 transform -translate-x-1/2 sm:top-[92%] sm:left-[85%] z-20">
+        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 sm:top-[92%] sm:left-[85%] z-20">
           <Button text='Learn More'/>
         </div>
      </div>
