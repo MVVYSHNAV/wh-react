@@ -18,12 +18,12 @@ const Navbar = ({ handleDarkMode, darkMode }) => {
           <h1 className='font-bold'>
             <a href='#'><img className='w-12' src={logo} alt="Logo" /></a>
           </h1>
-          <button
-            className='cursor-pointer rounded-full bg-gray-500 p-1 text-gray-400 dark:bg-gray-100 dark:text-gray-500 md:hidden'
-            onClick={handleToggleMenu}
-          >
-            <BiMenuAltLeft />
-          </button>
+              <button
+                className='cursor-pointer rounded-full bg-gray-500 p-1 text-gray-400 dark:bg-gray-100 dark:text-gray-500 md:hidden'
+                onClick={handleToggleMenu}
+              >
+                  <BiMenuAltLeft />
+              </button>
         </div>
 
         <div className={`${toggleMenu ? "block" : "hidden"} w-full flex-col md:flex md:flex-row md:w-auto md:items-center`}>
@@ -40,12 +40,12 @@ const Navbar = ({ handleDarkMode, darkMode }) => {
             ))}
           </ul>
 
-          <button
-            className='cursor-pointer mt-5 rounded-full p-2 dark:bg-gray-50 dark:text-gray-700 md:ml-5 md:mt-0'
-            onClick={handleDarkMode}
-          >
-            {darkMode ? <FaSun /> : <FaMoon />}
-          </button>
+              <button
+                className='cursor-pointer mt-5 rounded-full p-2 dark:bg-gray-50 dark:text-gray-700 md:ml-5 md:mt-0'
+                onClick={handleDarkMode}
+              >
+                {darkMode ? <FaSun /> : <FaMoon />}
+              </button>
         </div>
       </nav>
     </header>
