@@ -62,19 +62,19 @@ const Hero = () => {
           className="absolute top-60 w-52  right-[10%]  hidden md:block z-10"
         />
         </div>
-        <div className='absolute top-[70%] left-[40%] transform -translate-x-1/2 -translate-y-1/2 z-10  md:hidden'>
-        <h1 className=" text-5xl md:text-8xl lg:text-[200px] font-bold font-BebasNeue text-white text-center whitespace-nowrap drop-shadow-2xl">YOUR COMPANY</h1>
+        <div className='absolute top-[70%] left-[40%] drop-shadow-2xl transform -translate-x-1/2 -translate-y-1/2 z-10  md:hidden'>
+        <h1 className=" text-5xl md:text-8xl lg:text-[200px] font-bold font-BebasNeue text-white text-center whitespace-nowrap drop-shadow-2xl ">YOUR COMPANY</h1>
         </div>
-        <div className='absolute top-[75%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 z-10'>
+        <div className='absolute top-[75%] left-[50%] drop-shadow-2xl transform -translate-x-1/2 -translate-y-1/2 z-10 '>
         <h1 className=" text-5xl md:text-8xl lg:text-[200px] font-bold font-BebasNeue text-white text-center whitespace-nowrap drop-shadow-2xl">OUR RESPONSIBILITY</h1>
         </div>
-        <div className="absolute top-[80%] left-1/2 transform -translate-x-1/2 sm:top-[91%] sm:left-auto sm:right-40 z-20">
+        <div className="absolute top-[80%] left-1/2 transform -translate-x-1/2 sm:top-[92%] sm:left-auto sm:right-40 z-20">
           <Button />
         </div>
 
 
 
-        <div className='absolute top-[91%] left-[5%] md:left-[10%] md:transform md:-translate-x-1/5 z-20'>
+        <div className='absolute top-[92%] left-[5%] md:left-[10%] md:transform md:-translate-x-1/5 z-20'>
           <p className="text-m font-regular font-BebasNeue text-white text-center md:text-left whitespace-normal">
             We help businesses grow. Our experienced consultants understand <br/>
             today’s market and provide solutions that fit your specific needs.
