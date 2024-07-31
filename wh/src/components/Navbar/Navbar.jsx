@@ -19,7 +19,7 @@ const Navbar = ({ handleDarkMode, darkMode }) => {
             <a href='#'><img className='w-12' src={logo} alt="Logo" /></a>
           </h1>
               <button
-                className='cursor-pointer rounded-full bg-gray-500 p-1 text-gray-400 dark:bg-gray-100 dark:text-gray-500 md:hidden'
+                className='cursor-pointer rounded-full bg-gray-900 p-1 text-gray-100 dark:bg-gray-100 dark:text-gray-900 md:hidden'
                 onClick={handleToggleMenu}
               >
                   <BiMenuAltLeft />

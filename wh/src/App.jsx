@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero/Hero";
+import Ourmission from './components/Ourmission/Ourmission';
 
 const App = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -13,6 +14,7 @@ const App = () => {
     <div className={`${darkMode ? "dark" : ""} font-Roboto`}> {/* Corrected template literal syntax */}
       <Navbar handleDarkMode={handleDarkMode} darkMode={darkMode} />
       <Hero/>
+      <Ourmission/>
 
     </div>
   );
