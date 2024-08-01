@@ -24,7 +24,7 @@ const Ourmission = () => {
         </div>
         
         </div>
-        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 sm:top-[92%] sm:left-[85%] z-20">
+        <div className="absolute bottom-15 left-1/2 transform -translate-x-1/2 sm:top-[92%] sm:left-[85%] z-20">
           <Button text='Learn More'/>
         </div>
      </div>
