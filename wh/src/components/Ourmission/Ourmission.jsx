@@ -11,11 +11,11 @@ const Ourmission = () => {
         <img
             src={Ourimg}
             alt=""
-            className="p-5 w-[668px] h-[50vh] md:h-[90vh] mt-5"
+            className="p-5 w-[668px] h-[45vh] md:h-[90vh] mt-5"
             />
             </div>
         <div>
-        <div className='absolute flex flex-col md:top-[35%] top-[65%] left-[5%] md:left-[50%] p-10 md:transform md:-translate-x-1/5 z-20'>
+        <div className='absolute flex flex-col sm:top-[35%] top-[55%] left-[5%] sm:left-[50%] p-10 md:transform md:-translate-x-1/5 z-20'>
           <p className="text-sm md:text-5xl font-regular font-BebasNeue text-black dark:text-white text-center md:text-left whitespace-normal">
           our mission is to simplify your business processes and amplify your brand. We provide <span className='text-gray-500'> Comprehensive solutions, 
           including document management, web design, graphic design, and digital marketing.</span> Our goal is to deliver high-quality, 
