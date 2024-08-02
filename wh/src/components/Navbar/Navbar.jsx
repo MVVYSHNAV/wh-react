@@ -15,9 +15,9 @@ const Navbar = ({ handleDarkMode, darkMode }) => {
     <header className='fixed left-0 right-0 top-5 z-50 px-5 md:px-16'>
       <nav className='mx-auto flex max-w-6xl flex-col items-center justify-between rounded-xl shadow-2xl bg-transparent  text-gray-400 px-10 py-3 dark:bg-transparent dark:text-gray-100 md:flex-row'>
         <div className='flex w-full items-center justify-between md:flex-row'>
-          <h1 className='font-bold'>
+         
             <a href='#'><img className='w-12' src={logo} alt="Logo" /></a>
-          </h1>
+          
               <button
                 className='cursor-pointer rounded-full bg-slate-600 p-2 text-gray-100 dark:bg-gray-100 dark:text-gray-900 md:hidden'
                 onClick={handleToggleMenu}

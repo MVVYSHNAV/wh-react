@@ -3,6 +3,8 @@ import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero/Hero";
 import Ourmission from './components/Ourmission/Ourmission';
 import Prime from './components/Prime/Prime';
+import Whoweare from './components/Whoweare/Whoweare';
+import Ourworks from './components/Ourworks/Ourworks';
 
 const App = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -17,6 +19,8 @@ const App = () => {
       <Hero/>
       <Ourmission/>
       <Prime/>
+      <Whoweare/>
+      <Ourworks/>
 
     </div>
   );
