@@ -19,7 +19,7 @@ const Navbar = ({ handleDarkMode, darkMode }) => {
             <a href='#'><img className='w-12' src={logo} alt="Logo" /></a>
           </h1>
               <button
-                className='cursor-pointer rounded-full bg-gray-900 p-1 text-gray-100 dark:bg-gray-100 dark:text-gray-900 md:hidden'
+                className='cursor-pointer rounded-full bg-slate-600 p-2 text-gray-100 dark:bg-gray-100 dark:text-gray-900 md:hidden'
                 onClick={handleToggleMenu}
               >
                   <BiMenuAltLeft />
@@ -32,7 +32,7 @@ const Navbar = ({ handleDarkMode, darkMode }) => {
               <li key={index} className='w-full md:w-auto'>
                 <a
                   href={item.href}
-                  className='block rounded-xl p-2 px-8 hover:text-gray-100 dark:hover:text-gray-300 whitespace-nowrap' // Ensure text is on one line
+                  className='block rounded-xl p-2 px-8 hover:text-gray-100 dark:hover:text-gray-300 whitespace-nowrap'
                 >
                   {item.name}
                 </a>
