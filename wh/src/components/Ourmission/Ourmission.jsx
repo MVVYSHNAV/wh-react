@@ -3,7 +3,7 @@ import Button from '../Button/Button';
 
 const Ourmission = () => {
   return (
-    <div className="relative h-[780px] overflow-hidden bg-gray-100 dark:bg-gray-950 dark:text-gray-400 md:p-16 p-9">
+    <div className="relative h-[790px] overflow-hidden bg-gray-100 dark:bg-gray-950 dark:text-gray-400 md:p-16 p-9">
       <div>
         <h1 className="text-xl sm:text-2xl font-bold font-BebasNeue text-black dark:text-gray-400 ml-5">
           OUR MISSION

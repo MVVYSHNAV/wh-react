@@ -16,7 +16,7 @@ const Ourworks = () => {
           </div>
           <div className="p-5">
             <h1 className="text-3xl text-black dark:text-white font-BebasNeue tracking-widest whitespace-normal drop-shadow-xl">
-              Documents for Company
+              Documents
             </h1>
           </div>
         </div>
@@ -30,7 +30,7 @@ const Ourworks = () => {
           </div>
           <div className="p-5">
             <h1 className="text-3xl text-black dark:text-white font-BebasNeue tracking-widest whitespace-normal drop-shadow-xl">
-              Web Design for Company
+              Web Design
             </h1>
           </div>
         </div>
