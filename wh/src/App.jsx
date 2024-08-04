@@ -5,7 +5,8 @@ import Ourmission from './components/Ourmission/Ourmission';
 import Prime from './components/Prime/Prime';
 import Whoweare from './components/Whoweare/Whoweare';
 import Ourworks from './components/Ourworks/Ourworks';
-import Whychooseus from './components/Whychooseus/Whychooseus';
+import Meetus from './components/Meetus/Meetus';
+// import Whychooseus from './components/Whychooseus/Whychooseus';
 
 const App = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -22,7 +23,8 @@ const App = () => {
       <Prime/>
       <Whoweare/>
       <Ourworks/>
-      <Whychooseus/>
+      {/* <Whychooseus/> */}
+      <Meetus/>
 
     </div>
   );

@@ -13,6 +13,7 @@ export default {
       },
       clipPath: {
         'custom-polygon': 'polygon(78% 94%, 100% 100%, 100% 31%, 0 32%, 0% 100%, 89% 100%)',
+        
       },
       dropShadow: {
         '3xl': '0px 0px 10px rgba(195, 26, 255, 0.70)',
