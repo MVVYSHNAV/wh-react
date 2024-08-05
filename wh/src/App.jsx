@@ -18,7 +18,7 @@ const App = () => {
   };
 
   return (
-    <div className={`${darkMode ? "dark" : ""} font-Roboto`}> {/* Corrected template literal syntax */}
+    <div className={`${darkMode ? "dark" : ""} font-Roboto`}> 
       <Navbar handleDarkMode={handleDarkMode} darkMode={darkMode} />
       <Hero/>
       <Ourmission/>
