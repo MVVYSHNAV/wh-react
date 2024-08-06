@@ -21,11 +21,12 @@ const Ourmission = () => {
           graphic design, and digital marketing.</span> Our team of experts combines creativity with strategy to deliver customized solutions that help you stand
           out and succeed in a competitive market. 
           </p>
-        </div>
-      </div>
-      <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 sm:top-[75%] sm:left-[85%] z-20">
+          <div className="absolute bottom-4 left-1/2 mt-10 transform -translate-x-1/2 sm:top-[75%] sm:left-[85%] z-20">
         <Button text="See More" />
       </div>
+        </div>
+      </div>
+      
     </div>
   );
 }

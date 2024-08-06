@@ -2,13 +2,13 @@ import Logob from '../../assets/logogb.png';
 
 const Footer = () => {
   return (
-    <div className="relative h-[450px] overflow-hidden bg-gray-100 dark:bg-black text-white md:p-16 p-9">
+    <div className="relative h-[450px] overflow-hidden bg-gray-100 dark:bg-gray-950 text-white md:p-16 p-9">
       <div className="flex  sm:space-x-10">
-        <img src={Logob} alt="WizardHorizon Logo" className="sm:h-64 h-24" />
+        <img src={Logob} alt="WizardHorizon Logo" className="sm:h-64 h-20" />
         <h1 className="sm:text-[210px] text-5xl p-6 font-BebasNeue text-center justify-center text-black dark:text-white">WIZARDHORIZON</h1>
       </div>
-      <div className="text-center">
-        <p className="max-w-5xl mx-auto mr-5 sm:text-lg text-black dark:text-white">
+      <div className="text-right">
+        <p className="sm:max-w-4xl sm:mx-auto font-Roboto sm:mr-28 sm:text-lg text-black text-justify dark:text-white">
           We uphold the highest standards of honesty and transparency in all our interactions. We empower businesses to 
           achieve their full potential through strategic insights and actionable solutions.
         </p>
