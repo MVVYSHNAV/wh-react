@@ -6,7 +6,7 @@ import paper2 from "../../assets/paper2.png";
 import blackcover from "../../assets/blackcoverup.png";
 import build from "../../assets/buildingwarm.png";
 import Button from "../Button/Button";
-
+import { motion } from 'framer-motion';
 
 const Hero = () => {
   return (
@@ -39,13 +39,24 @@ const Hero = () => {
         />
         </div>
         <div className='hidden md:block absolute top-[45%] left-[40%] transform -translate-x-1/2 -translate-y-1/2 z-10 drop-shadow-2xl'>
-        <h1 className=" text-5xl md:text-8xl lg:text-[200px] font-bold font-BebasNeue text-white text-center whitespace-nowrap drop-shadow-2xl">YOUR COMPANY</h1>
+        <motion.div 
+              initial={{ opacity: 0, x: -300 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1 }}
+            >
+        <h1 className=" text-5xl md:text-8xl lg:text-[200px] font-bold font-BebasNeue text-white text-center whitespace-nowrap drop-shadow-2xl">YOUR COMPANY</h1> </motion.div>
         </div>
         <div className='flex items-center justify-center h-full'>
-        <img
+        <motion.img
           src={Smile}
           alt="Smiling Man"
           className="absolute bottom-0 max-w-xl md:max-w-2xl h-auto z-10"
+          animate={{
+            x: 0,
+            y: -36,
+            scale: 1,
+            rotate: 0,
+          }}
         />
         </div>
         <div className='flex h-full'>
@@ -63,10 +74,20 @@ const Hero = () => {
         />
         </div>
         <div className='absolute top-[70%] left-[40%] drop-shadow-2xl transform -translate-x-1/2 -translate-y-1/2 z-10  md:hidden'>
-        <h1 className=" text-5xl md:text-8xl lg:text-[200px] font-bold font-BebasNeue text-white text-center whitespace-nowrap drop-shadow-2xl ">YOUR COMPANY</h1>
+        <motion.div 
+              initial={{ opacity: 0, x: -100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1 }}
+            >
+        <h1 className=" text-5xl md:text-8xl lg:text-[200px] font-bold font-BebasNeue text-white text-center whitespace-nowrap drop-shadow-2xl ">YOUR COMPANY</h1></motion.div>
         </div>
         <div className='absolute top-[75%] left-[50%] drop-shadow-2xl transform -translate-x-1/2 -translate-y-1/2 z-10 '>
-        <h1 className=" text-5xl md:text-8xl lg:text-[200px] font-bold font-BebasNeue text-white text-center whitespace-nowrap drop-shadow-2xl">OUR RESPONSIBILITY</h1>
+        <motion.div 
+              initial={{ opacity: 0, x: 300 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1 }}
+            >
+        <h1 className=" text-5xl md:text-8xl lg:text-[200px] font-bold font-BebasNeue text-white text-center whitespace-nowrap drop-shadow-2xl">OUR RESPONSIBILITY</h1> </motion.div>
         </div>
         <div className="absolute top-[80%] left-1/2 transform -translate-x-1/2 sm:top-[92%] sm:left-auto sm:right-40 z-20">
           <Button />
