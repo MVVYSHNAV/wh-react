@@ -31,7 +31,7 @@ const Navbar = ({ handleDarkMode, darkMode }) => {
   }, [lastScrollY]);
 
   return (
-    <header className={`fixed left-0 right-0 top-5 z-50 px-5 md:px-16 transition-transform duration-300 ${showNavbar ? 'transform translate-y-0' : 'transform -translate-y-full'}`}>
+    <header className={`fixed left-0 right-0 top-5 z-50 px-5 md:px-16 transition-transform duration-300 ${showNavbar ? 'transform translate-y-0' : 'transform -translate-y-full z-10'}`}>
       <nav className='mx-auto flex max-w-6xl flex-col items-center justify-between rounded-xl shadow-2xl bg-transparent text-gray-400 px-10 py-3 dark:bg-transparent dark:text-gray-100 md:flex-row'>
         <div className='flex w-full items-center justify-between md:flex-row'>
           <a href='#'><img className='w-12' src={logo} alt="Logo" /></a>

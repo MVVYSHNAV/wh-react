@@ -3,7 +3,7 @@ import Workdoc from '../../assets/workdoc.png';
 
 const Ourworks = () => {
   return (
-    <div className="relative h-[850px] overflow-hidden bg-gray-100 dark:bg-gray-950 dark:text-gray-400 md:p-16 p-9">
+    <div id="Ourworks" className="relative h-[850px] overflow-hidden bg-gray-100 dark:bg-gray-950 dark:text-gray-400 md:p-16 p-9">
       <div>
         <h1 className="text-xl sm:text-2xl font-bold font-BebasNeue text-black dark:text-gray-400 ml-5">
           OUR WORKS

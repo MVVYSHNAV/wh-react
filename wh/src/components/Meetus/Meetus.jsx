@@ -2,7 +2,7 @@ import Contactus from '../../assets/contactus.png'
 import Button from '../Button/Button';
 const Meetus = () => {
   return (
-    <div className="relative h-[600px] overflow-hidden bg-gray-100 dark:bg-gray-950 dark:text-gray-400 md:p-16 p-9" >
+    <div id="Meetus" className="relative h-[600px] overflow-hidden bg-gray-100 dark:bg-gray-950 dark:text-gray-400 md:p-16 p-9" >
          <div>
         <h1 className="text-xl md:text-2xl font-bold font-BebasNeue text-black dark:text-gray-400 ml-5 mt-10">
         MEET US 
