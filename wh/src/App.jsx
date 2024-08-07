@@ -7,7 +7,7 @@ import Whoweare from './components/Whoweare/Whoweare';
 import Ourworks from './components/Ourworks/Ourworks';
 import Meetus from './components/Meetus/Meetus';
 import Footer from './components/Footer/Footer';
-// import Whatwedo from './components/Whatwedo/Whatwedo';
+import Whatwedo from './components/Whatwedo/Whatwedo';
 // import Whychooseus from './components/Whychooseus/Whychooseus';
 
 const App = () => {
@@ -22,7 +22,7 @@ const App = () => {
       <Navbar handleDarkMode={handleDarkMode} darkMode={darkMode} />
       <Hero/>
       <Ourmission/>
-      {/* <Whatwedo/> */}
+      <Whatwedo/>
       <Prime/>
       <Whoweare/>
       <Ourworks/>
