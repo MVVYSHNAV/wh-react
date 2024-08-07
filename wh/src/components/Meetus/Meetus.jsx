@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
 import Contactus from '../../assets/contactus.png';
 import Button from '../Button/Button';
+import FacebookSharpIcon from '@mui/icons-material/FacebookSharp';
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import XIcon from '@mui/icons-material/X';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
 
 const Meetus = () => {
   const [email, setEmail] = useState('');
@@ -50,10 +56,20 @@ const Meetus = () => {
 
         <div className="flex flex-col items-center sm:items-start">
           <img src={Contactus} alt="contact" className="w-full h-auto" />
-          <div className="mt-5">
-            <h1>Bangalore</h1>
-            <h1>Stay Connected with WizardHorizon</h1>
-            <p>Follow us today and be a part of the WizardHorizon journey</p>
+          <div className="mt-5 text-center sm:text-left">
+            <h1 className='sm:text-2xl font-BebasNeue flex items-center sm:justify-start justify-center'>
+              <LocationOnIcon className="text-red-500 w-8 h-8" />
+              IndraNagar | Bangalore, India
+            </h1>
+            <h1 className='sm:text-2xl font-BebasNeue mt-5'>Stay Connected with WizardHorizon</h1>
+            <div className='flex justify-center sm:justify-start mt-2'>
+              <FacebookSharpIcon className='m-2 w-8 h-8' />
+              <LinkedInIcon className='m-2 w-8 h-8' />
+              <XIcon className='m-2 w-8 h-8' />
+              <InstagramIcon className='m-2 w-8 h-8' />
+              <WhatsAppIcon className='m-2 w-8 h-8' />
+            </div>
+            <p className='font-Roboto font-bold mt-3'>Follow us today and be a part of the WizardHorizon journey</p>
           </div>
         </div>
       </div>
