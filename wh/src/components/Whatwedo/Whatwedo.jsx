@@ -1,4 +1,5 @@
-import React from 'react';
+import { motion } from 'framer-motion';
+import React, { useRef } from 'react';
 import Gst from '../../assets/gst.png'; 
 import TaxP from '../../assets/taxplan.png'
 import InternalAudit from '../../assets/internaladuit.png'
@@ -68,6 +69,8 @@ const services = [
 ];
 
 const Whatwedo = () => {
+  const scrollRef = useRef(null);
+
   return (
     <div id='Whatwedo' className="relative overflow-hidden bg-gray-100 dark:bg-gray-950 dark:text-gray-400 md:p-16 p-9">
       <div>
@@ -76,18 +79,22 @@ const Whatwedo = () => {
         </h1>
       </div>
       <div className="items-center text-center sm:text-2xl font-BebasNeue mt-10">
-        <h1 className=' text-black dark:text-gray-400'>Services</h1>
+        <h1 className='text-black dark:text-gray-400'>Services</h1>
         <p>
           We provide a comprehensive range of services designed to support your
           financial and branding needs
         </p>
       </div>
 
-      <div className="flex gap-12 overflow-x-auto py-10">
+      <div className="flex gap-12 overflow-x-auto py-10" ref={scrollRef} style={{ overflow: "scroll" }}>
         {services.map((service, index) => (
-          <div
+          <motion.div
             key={index}
-            className="flex-none p-2 bg-gradient-to-b from-pink-600 to-black h-[320px] w-72 rounded-3xl drop-shadow-2xl"
+            className="flex-none p-2 bg-gradient-to-b from-pink-300 to-black h-[320px] w-72 rounded-3xl drop-shadow-2xl"
+            initial={{ opacity: 0, scale: 0.3 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ root: scrollRef, once: true }}
           >
             <img
               src={service.img}
@@ -100,7 +107,7 @@ const Whatwedo = () => {
                 {service.description}
               </p>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>

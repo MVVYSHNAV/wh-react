@@ -11,13 +11,31 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 const Meetus = () => {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
+  const [successMessage, setSuccessMessage] = useState('');
 
   const handleEmailChange = (e) => setEmail(e.target.value);
   const handleMessageChange = (e) => setMessage(e.target.value);
 
-  const handleSubmit = () => {
-    console.log('Email:', email);
-    console.log('Message:', message);
+  const handleSubmit = async () => {
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, message }),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setSuccessMessage(result.message);
+        setEmail('');
+        setMessage('');
+      } else {
+        setSuccessMessage('Failed to submit message.');
+      }
+    } catch (error) {
+      setSuccessMessage('Failed to submit message.');
+    }
   };
 
   return (
@@ -52,6 +70,11 @@ const Meetus = () => {
           <div className="mt-5 flex justify-center sm:justify-start">
             <Button text="Submit" onClick={handleSubmit} />
           </div>
+          {successMessage && (
+            <div className="mt-4 text-green-600 font-BebasNeue">
+              {successMessage}
+            </div>
+          )}
         </div>
 
         <div className="flex flex-col items-center sm:items-start">
