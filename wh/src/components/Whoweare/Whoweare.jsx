@@ -18,8 +18,8 @@ const Ourmission = () => {
         />
         <div className="flex flex-col items-center md:items-start justify-center p-5 sm:p-10">
         <motion.div 
-        initial={{ opacity: 0,x: 100 }}
-        whileInView={{ opacity: 1, x: 0 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
         transition={{ duration: 2 }}
         >
           <p className="sm:text-3xl text-lg font-regular font-BebasNeue text-black dark:text-white  text-justify md:text-left whitespace-normal">

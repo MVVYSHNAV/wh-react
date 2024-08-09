@@ -10,6 +10,7 @@ import Footer from './components/Footer/Footer';
 import Whatwedo from './components/Whatwedo/Whatwedo';
 // import Whychooseus from './components/Whychooseus/Whychooseus';
 
+
 const App = () => {
   const [darkMode, setDarkMode] = useState(false);
 
@@ -29,6 +30,7 @@ const App = () => {
       {/* <Whychooseus/> */}
       <Meetus/>
       <Footer/>
+
 
     </div>
   );
