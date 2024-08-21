@@ -7,6 +7,7 @@ import blackcover from "../../assets/blackcoverup.png";
 import build from "../../assets/buildingwarm.png";
 import Button from "../Button/Button";
 import { motion } from 'framer-motion';
+import { NavLink } from 'react-router-dom';
 
 const Hero = () => {
   return (
@@ -90,7 +91,7 @@ const Hero = () => {
         <h1 className=" text-5xl md:text-8xl lg:text-[200px] font-bold font-BebasNeue text-white text-center whitespace-nowrap drop-shadow-2xl">OUR RESPONSIBILITY</h1> </motion.div>
         </div>
         <div className="absolute top-[80%] left-1/2 transform -translate-x-1/2 sm:top-[92%] sm:left-auto sm:right-40 z-20">
-          <Button />
+          <NavLink to='/form' className="relative z-20 mx-auto flex justify-center"><Button/></NavLink>
         </div>
 
 

@@ -18,7 +18,7 @@ const Button = ({
   return (
     <div className={`relative z-20 mx-auto flex justify-center ${additionalClasses}`}>
       <motion.button whileTap={{ scale: 0.55 }}
-        className={`rounded-lg sm:rounded-2xl bg-gradient-to-b ${bgGradientFrom} ${bgGradientTo} ${darkBgGradientFrom} ${darkBgGradientTo} ${paddingX} ${paddingY} font-semibold ${textColor} ${shadow} ${hoverTextColor} drop-shadow-3xl ${opacity} 
+        className={`rounded-lg sm:rounded-2xl bg-gradient-to-b ${bgGradientFrom} ${bgGradientTo} ${darkBgGradientFrom} ${darkBgGradientTo} ${paddingX} ${paddingY} font-semibold ${textColor} ${shadow} ${hoverTextColor} drop-shadow-2xl ${opacity} 
           px-3 py-2
           md:px-8 md:py-3
           text-sm

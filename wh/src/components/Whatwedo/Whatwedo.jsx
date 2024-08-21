@@ -9,6 +9,8 @@ import ResearchR from '../../assets/researchreport.png'
 import Logod from '../../assets/logodesign.png'
 import Webd from '../../assets/webdesign.png'
 import DigiM from '../../assets/digitalmark.png'
+import Carousel from "react-multi-carousel"
+import 'react-multi-carousel/lib/styles.css';
 
 const services = [
   {
@@ -86,7 +88,86 @@ const Whatwedo = () => {
         </p>
       </div>
 
-      <div className="flex gap-12 overflow-x-auto py-10" ref={scrollRef} style={{ overflow: "scroll" }}>
+      <Carousel
+  additionalTransfrom={0}
+  arrows
+  autoPlaySpeed={3000}
+  centerMode={false}
+  className="w-full"
+  containerClass="container-with-dots"
+  dotListClass=""
+  draggable
+  focusOnSelect={false}
+  infinite
+  itemClass="w-fit"
+  
+  keyBoardControl
+  minimumTouchDrag={80}
+  pauseOnHover
+  renderArrowsWhenDisabled={false}
+  renderButtonGroupOutside={false}
+  renderDotsOutside={false}
+  responsive={{
+    desktop: {
+      breakpoint: {
+        max: 3000,
+        min: 1024
+      },
+      items: 3,
+      partialVisibilityGutter: 40
+    },
+    mobile: {
+      breakpoint: {
+        max: 464,
+        min: 0
+      },
+      items: 1,
+      partialVisibilityGutter: 30
+    },
+    tablet: {
+      breakpoint: {
+        max: 1024,
+        min: 464
+      },
+      items: 2,
+      partialVisibilityGutter: 30
+    }
+  }}
+  rewind={false}
+  rewindWithAnimation={false}
+  rtl={false}
+  shouldResetAutoplay
+  showDots={false}
+  sliderClass=""
+  slidesToSlide={1}
+  swipeable
+>
+{services.map((service, index) => (
+          <motion.div
+            key={index}
+            className="flex-none p-2 bg-gradient-to-b from-pink-300 to-black h-[320px] w-72 rounded-3xl drop-shadow-2xl"
+            initial={{ opacity: 0, scale: 0.3 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ root: scrollRef, once: true }}
+          >
+            <img
+              src={service.img}
+              alt={`${service.title} image`}
+              className="h-28 w-full object-cover rounded-t-3xl"
+            />
+            <div className="text-white p-2 mt-2">
+              <h1 className="font-BebasNeue text-2xl">{service.title}</h1>
+              <p className="font-Roboto font-bold text-xs">
+                {service.description}
+              </p>
+            </div>
+          </motion.div>
+        ))}
+
+</Carousel>
+
+      {/* <div className="flex gap-12 overflow-x-auto py-10" ref={scrollRef} style={{ overflow: "scroll" }}>
         {services.map((service, index) => (
           <motion.div
             key={index}
@@ -109,7 +190,7 @@ const Whatwedo = () => {
             </div>
           </motion.div>
         ))}
-      </div>
+      </div> */}
     </div>
   );
 };

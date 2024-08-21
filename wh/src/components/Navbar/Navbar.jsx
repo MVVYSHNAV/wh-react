@@ -4,7 +4,7 @@ import { FaMoon, FaSun } from "react-icons/fa";
 import { menuItems } from "../../constants";
 import logo from "../../assets/logo100.png";
 
-const Navbar = ({ handleDarkMode, darkMode }) => {
+const Navbar = ({ handleDarkMode, darkMode, hideDarkMode }) => {
   const [toggleMenu, setToggleMenu] = useState(false);
   const [showNavbar, setShowNavbar] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -30,6 +30,10 @@ const Navbar = ({ handleDarkMode, darkMode }) => {
     };
   }, [lastScrollY]);
 
+  const handleMenuItemClick = () => {
+    setToggleMenu(false);
+  };
+
   return (
     <header className={`fixed left-0 right-0 top-5 z-50 px-5 md:px-16 transition-transform duration-300 ${showNavbar ? 'transform translate-y-0' : 'transform -translate-y-full z-10'}`}>
       <nav className='mx-auto flex max-w-6xl flex-col items-center justify-between rounded-xl shadow-2xl bg-transparent text-gray-400 px-10 py-3 dark:bg-transparent dark:text-gray-100 md:flex-row'>
@@ -49,7 +53,8 @@ const Navbar = ({ handleDarkMode, darkMode }) => {
               <li key={index} className='w-full md:w-auto'>
                 <a
                   href={item.href}
-                  className='block rounded-xl p-2 px-8 hover:text-gray-100 dark:hover:text-gray-300 whitespace-nowrap'
+                  className='block rounded-xl p-2 px-8 hover:text-gray-600 dark:hover:text-gray-300 whitespace-nowrap'
+                  onClick={handleMenuItemClick} // This will close the menu after a click
                 >
                   {item.name}
                 </a>
@@ -57,12 +62,12 @@ const Navbar = ({ handleDarkMode, darkMode }) => {
             ))}
           </ul>
 
-          <button
+          {!hideDarkMode && <button
             className='cursor-pointer mt-5 rounded-full p-2 dark:bg-gray-50 dark:text-gray-700 md:ml-5 md:mt-0'
             onClick={handleDarkMode}
           >
             {darkMode ? <FaSun /> : <FaMoon />}
-          </button>
+          </button>}
         </div>
       </nav>
     </header>

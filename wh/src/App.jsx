@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Route, Routes } from "react-router-dom"
 import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero/Hero";
 import Ourmission from './components/Ourmission/Ourmission';
@@ -9,9 +10,11 @@ import Meetus from './components/Meetus/Meetus';
 import Footer from './components/Footer/Footer';
 import Whatwedo from './components/Whatwedo/Whatwedo';
 // import Whychooseus from './components/Whychooseus/Whychooseus';
+import Getform from './components/Hero/Getform';
+import Aboutus from './components/Whoweare/Aboutus';
 
 
-const App = () => {
+const Main =() => {
   const [darkMode, setDarkMode] = useState(false);
 
   const handleDarkMode = () => {
@@ -34,6 +37,17 @@ const App = () => {
 
     </div>
   );
+}
+
+
+const App = () => {
+  return (
+    <Routes>
+      <Route path="/" element={<Main/>} />
+      <Route path="/form" element={<Getform/>} />
+      <Route path="/aboutus" element={<Aboutus/>} />
+    </Routes>
+  )
 }
 
 export default App;
