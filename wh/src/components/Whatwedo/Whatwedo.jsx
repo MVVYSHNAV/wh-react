@@ -1,16 +1,20 @@
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+
+import { Pagination, Navigation, Autoplay } from 'swiper/modules';
 import { motion } from 'framer-motion';
-import React, { useRef } from 'react';
+import React from 'react';
 import Gst from '../../assets/gst.png'; 
-import TaxP from '../../assets/taxplan.png'
-import InternalAudit from '../../assets/internaladuit.png'
-import Bookkeeping from '../../assets/bookkeeping.png'
-import FinancialM from '../../assets/financialm.png'
-import ResearchR from '../../assets/researchreport.png'
-import Logod from '../../assets/logodesign.png'
-import Webd from '../../assets/webdesign.png'
-import DigiM from '../../assets/digitalmark.png'
-import Carousel from "react-multi-carousel"
-import 'react-multi-carousel/lib/styles.css';
+import TaxP from '../../assets/taxplan.png';
+import InternalAudit from '../../assets/internaladuit.png';
+import Bookkeeping from '../../assets/bookkeeping.png';
+import FinancialM from '../../assets/financialm.png';
+import ResearchR from '../../assets/researchreport.png';
+import Logod from '../../assets/logodesign.png';
+import Webd from '../../assets/webdesign.png';
+import DigiM from '../../assets/digitalmark.png';
 
 const services = [
   {
@@ -67,12 +71,9 @@ const services = [
     description:
       'Develop and implement comprehensive digital marketing strategies, including SEO, social media marketing, email campaigns, and PPC advertising, to increase brand awareness and drive traffic.',
   },
-
 ];
 
 const Whatwedo = () => {
-  const scrollRef = useRef(null);
-
   return (
     <div id='Whatwedo' className="relative overflow-hidden bg-gray-100 dark:bg-gray-950 dark:text-gray-400 md:p-16 p-9">
       <div>
@@ -80,117 +81,60 @@ const Whatwedo = () => {
           WHAT WE DO
         </h1>
       </div>
-      <div className="items-center text-center sm:text-2xl font-BebasNeue mt-10">
+      <div className="items-center text-center sm:text-2xl font-BebasNeue mt-10 mb-10">
         <h1 className='text-black dark:text-gray-400'>Services</h1>
         <p>
           We provide a comprehensive range of services designed to support your
-          financial and branding needs
+          financial and branding needs.
         </p>
       </div>
 
-      <Carousel
-  additionalTransfrom={0}
-  arrows
-  autoPlaySpeed={3000}
-  centerMode={false}
-  className="w-full"
-  containerClass="container-with-dots"
-  dotListClass=""
-  draggable
-  focusOnSelect={false}
-  infinite
-  itemClass="w-fit"
-  
-  keyBoardControl
-  minimumTouchDrag={80}
-  pauseOnHover
-  renderArrowsWhenDisabled={false}
-  renderButtonGroupOutside={false}
-  renderDotsOutside={false}
-  responsive={{
-    desktop: {
-      breakpoint: {
-        max: 3000,
-        min: 1024
-      },
-      items: 3,
-      partialVisibilityGutter: 40
-    },
-    mobile: {
-      breakpoint: {
-        max: 464,
-        min: 0
-      },
-      items: 1,
-      partialVisibilityGutter: 30
-    },
-    tablet: {
-      breakpoint: {
-        max: 1024,
-        min: 464
-      },
-      items: 2,
-      partialVisibilityGutter: 30
-    }
-  }}
-  rewind={false}
-  rewindWithAnimation={false}
-  rtl={false}
-  shouldResetAutoplay
-  showDots={false}
-  sliderClass=""
-  slidesToSlide={1}
-  swipeable
->
-{services.map((service, index) => (
-          <motion.div
-            key={index}
-            className="flex-none p-2 bg-gradient-to-b from-pink-300 to-black h-[320px] w-72 rounded-3xl drop-shadow-2xl"
-            initial={{ opacity: 0, scale: 0.3 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ root: scrollRef, once: true }}
-          >
-            <img
-              src={service.img}
-              alt={`${service.title} image`}
-              className="h-28 w-full object-cover rounded-t-3xl"
-            />
-            <div className="text-white p-2 mt-2">
-              <h1 className="font-BebasNeue text-2xl">{service.title}</h1>
-              <p className="font-Roboto font-bold text-xs">
-                {service.description}
-              </p>
-            </div>
-          </motion.div>
-        ))}
-
-</Carousel>
-
-      {/* <div className="flex gap-12 overflow-x-auto py-10" ref={scrollRef} style={{ overflow: "scroll" }}>
+      <Swiper
+        modules={[Pagination, Navigation, Autoplay]}
+        spaceBetween={30}
+        slidesPerView={3}
+        navigation
+        pagination={{ clickable: true }}
+        autoplay={{ delay: 3000, disableOnInteraction: false }}
+        breakpoints={{
+          0: {
+            slidesPerView: 1,
+            spaceBetween: 10,
+          },
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+          },
+        }}
+        className="pb-16"
+      >
         {services.map((service, index) => (
-          <motion.div
-            key={index}
-            className="flex-none p-2 bg-gradient-to-b from-pink-300 to-black h-[320px] w-72 rounded-3xl drop-shadow-2xl"
-            initial={{ opacity: 0, scale: 0.3 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ root: scrollRef, once: true }}
-          >
-            <img
-              src={service.img}
-              alt={`${service.title} image`}
-              className="h-28 w-full object-cover rounded-t-3xl"
-            />
-            <div className="text-white p-2 mt-2">
-              <h1 className="font-BebasNeue text-2xl">{service.title}</h1>
-              <p className="font-Roboto font-bold text-xs">
-                {service.description}
-              </p>
-            </div>
-          </motion.div>
+          <SwiperSlide key={index}>
+            <motion.div
+              className="flex-none p-4 bg-gradient-to-b from-blue-300 to-black h-[350px] w-full max-w-xs mx-auto rounded-3xl shadow-lg transform transition-transform hover:scale-105"
+              initial={{ opacity: 0, scale: 0.85 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5 }}
+            >
+              <img
+                src={service.img}
+                alt={`${service.title} image`}
+                className="h-32 w-full object-cover rounded-t-3xl"
+              />
+              <div className="text-white p-4">
+                <h1 className="font-BebasNeue text-2xl mb-2">{service.title}</h1>
+                <p className="font-Roboto font-bold text-sm">
+                  {service.description}
+                </p>
+              </div>
+            </motion.div>
+          </SwiperSlide>
         ))}
-      </div> */}
+      </Swiper>
     </div>
   );
 };

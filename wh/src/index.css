@@ -28,3 +28,19 @@
     @apply bg-slate-700 dark:bg-slate-500 ; 
   }
   
+  .swiper-button-next, .swiper-button-prev {
+    width: 40px; 
+    height: 30px; 
+    background-color: rgba(0, 0, 0, 0.6); 
+    border-radius: 15px; 
+  }
+  
+  .swiper-button-next::after, .swiper-button-prev::after {
+    font-size: 18px; 
+    color: #fff;
+  }
+  
+  /* Optional: Hover effect for buttons */
+  .swiper-button-next:hover, .swiper-button-prev:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
