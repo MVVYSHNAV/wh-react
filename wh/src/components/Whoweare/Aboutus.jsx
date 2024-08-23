@@ -8,6 +8,9 @@ const Aboutus = () => {
       <div>
         <h1 className='text-3xl mt-10 font-BebasNeue'> About Us </h1>
       </div>
+      <div>
+        
+      </div>
     </div>
     </>
   )

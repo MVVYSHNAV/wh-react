@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Contactus from '../../assets/contactus.png';
 import Button from '../Button/Button';
 import FacebookSharpIcon from '@mui/icons-material/FacebookSharp';
@@ -7,16 +7,22 @@ import XIcon from '@mui/icons-material/X';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
+import CallIcon from '@mui/icons-material/Call';
 
 const Meetus = () => {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleEmailChange = (e) => setEmail(e.target.value);
   const handleMessageChange = (e) => setMessage(e.target.value);
 
   const handleSubmit = async () => {
+    // Clear previous messages
+    setSuccessMessage('');
+    setErrorMessage('');
+
     try {
       const response = await fetch('/api/contact', {
         method: 'POST',
@@ -26,17 +32,30 @@ const Meetus = () => {
 
       const result = await response.json();
 
-      if (result.success) {
-        setSuccessMessage(result.message);
+      if (response.ok && result.success) {
+        setSuccessMessage('Form submitted successfully! We will catch up with you within 24 hours.');
         setEmail('');
         setMessage('');
       } else {
-        setSuccessMessage('Failed to submit message.');
+        setErrorMessage('Failed to submit message.');
       }
     } catch (error) {
-      setSuccessMessage('Failed to submit message.');
+      console.error('Error during form submission:', error);
+      setErrorMessage('Failed to submit message.');
     }
   };
+
+  // useEffect hook to hide the success message after a few seconds
+  useEffect(() => {
+    if (successMessage) {
+      const timer = setTimeout(() => {
+        setSuccessMessage('');
+      }, 8000); // Hide after 3 seconds
+
+      // Cleanup function to clear the timeout
+      return () => clearTimeout(timer);
+    }
+  }, [successMessage]);
 
   return (
     <div
@@ -52,20 +71,30 @@ const Meetus = () => {
         <div className="ml-5">
           <div className="font-BebasNeue sm:text-3xl mb-2">EMAIL</div>
           <input
+            id="email"
             type="email"
             value={email}
             onChange={handleEmailChange}
             placeholder="Enter your email"
             className="h-10 sm:h-12 w-full sm:w-96 bg-gray-200 rounded p-2 mb-4"
+            required
           />
 
           <div className="font-BebasNeue sm:text-3xl mb-2">PUT MESSAGE</div>
           <textarea
+            id="message"
             value={message}
             onChange={handleMessageChange}
             placeholder="Enter your message"
             className="h-20 sm:h-28 w-full sm:w-96 bg-gray-200 rounded p-2 mb-4"
+            required
           ></textarea>
+
+          {errorMessage && (
+            <div className="text-red-600 font-BebasNeue mb-4">
+              {errorMessage}
+            </div>
+          )}
 
           <div className="mt-5 flex justify-center sm:justify-start">
             <Button text="Submit" onClick={handleSubmit} />
@@ -84,7 +113,8 @@ const Meetus = () => {
               <LocationOnIcon className="text-red-500 w-8 h-8" />
               IndraNagar | Bangalore, India
             </h1>
-            <h1 className='sm:text-2xl font-BebasNeue mt-5'>Stay Connected with WizardHorizon</h1>
+            <h1 className='sm:text-2xl font-BebasNeue flex items-center sm:justify-start justify-center' > <CallIcon className='w-8 h-8' /> 62386 63883</h1>
+            <h1 className='sm:text-2xl font-BebasNeue mt-1'>Stay Connected with WizardHorizon</h1>
             <div className='flex justify-center sm:justify-start mt-2'>
               <FacebookSharpIcon className='m-2 w-8 h-8' />
               <LinkedInIcon className='m-2 w-8 h-8' />
