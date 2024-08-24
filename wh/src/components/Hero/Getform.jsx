@@ -1,67 +1,68 @@
 import React, { useState } from 'react';
 import Navbar from '../Navbar/Navbar';
 import Button from '../Button/Button';
-import { Description } from '@mui/icons-material';
 
 const Getform = () => {
   const [formData, setFormData] = useState({
     name: '',
-    companyName: '',
-    phone:'',
+    phone: '',
     email: '',
     domain: '',
     needs: '',
-    description: ''
+    description: '',
   });
 
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
 
-  const handleSubmit =async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    
-    const newRow={
-      Name:formData.name,
-      Email:formData.email,
-      Phone:formData.phone,
-      Company_Name:formData.companyName,
-      Domain:formData.domain,
-      What_need:formData.needs,
-      Description:formData.description
+
+    // Get current date and time in the format needed for Google Sheets
+    const currentDateTime = new Date().toLocaleString();
+
+    const newRow = {
+      Name: formData.name,
+      Email: formData.email,
+      Phone: formData.phone,
+      Domain: formData.domain,
+      What_need: formData.needs,
+      Description: formData.description,
+      Date_Time: currentDateTime,
+    };
+
+    const SCRIPT_URL = import.meta.env.VITE_SCRIPT_URL;
+    const Form = new FormData();
+    for (const key in newRow) {
+      Form.append(key, newRow[key]);
     }
-    
-    const SCRIPT_URL=import.meta.env.VITE_SCRIPT_URL;
-    const Form=new FormData();
-    Form.append("Name",newRow.Name);
-    Form.append("Email",newRow.Email);
-    Form.append("Phone",newRow.Phone);
-    Form.append("Company_Name",newRow.Company_Name);
-    Form.append("Domain",newRow.Domain);
-    Form.append("What_need",newRow.What_need);
-    Form.append("Description",newRow.Description);
-    const res=await fetch(SCRIPT_URL,{
-      mode:"no-cors",
-      method:"POST",
-      body: Form
-    })
-    setShowSuccessMessage(true);
 
+    try {
+      await fetch(SCRIPT_URL, {
+        mode: 'no-cors',
+        method: 'POST',
+        body: Form,
+      });
 
-    setFormData({
-      name: '',
-      companyName: '',
-      email: '',
-      phone: '',
-      domain: '',
-      needs: '',
-      description: ''
-    });
+      setShowSuccessMessage(true);
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        domain: '',
+        needs: '',
+        description: '',
+      });
 
-    
+      // Success popup
+      alert('Form submitted successfully! We will catch up with you within 24 hours.');
+    } catch (error) {
+      console.error('Error submitting the form:', error);
+    }
   };
 
   return (
@@ -74,65 +75,26 @@ const Getform = () => {
               Together, We Create the Future You Envision.
             </h1>
             <div className='grid grid-cols-2 gap-3 p-5 pl-10 justify-center items-center'>
-              <h1 className='font-bold'>Please enter your Name</h1>
-              <input
-                type='text'
-                name='name'
-                placeholder='Jibin K Job'
-                value={formData.name}
-                onChange={handleInputChange}
-                className='h-8 sm:h-10 w-full sm:w-96 rounded mb-4 p-5 bg-gray-200'
-                required
-              />
-              <h1 className='font-bold'>Company Name</h1>
-              <input
-                type='text'
-                name='companyName'
-                placeholder='WizardHorizon'
-                value={formData.companyName}
-                onChange={handleInputChange}
-                className='h-8 sm:h-10 w-full sm:w-96 rounded mb-4 p-5 bg-gray-200'
-                required
-              />
-              <h1 className='font-bold'>Email</h1>
-              <input
-                type='email'
-                name='email'
-                placeholder='example@gmail.com'
-                value={formData.email}
-                onChange={handleInputChange}
-                className='h-8 sm:h-10 w-full sm:w-96 rounded mb-4 p-5 bg-gray-200'
-                required
-              />
-              <h1 className='font-bold'>Phone</h1>
-              <input
-                type='number'
-                name='phone'
-                placeholder='7305451111'
-                value={formData.phone}
-                onChange={handleInputChange}
-                className='h-8 sm:h-10 w-full sm:w-96 rounded mb-4 p-5 bg-gray-200'
-                required
-              />
-              <h1 className='font-bold'>Domain</h1>
-              <input
-                type='text'
-                name='domain'
-                placeholder='www.example.com'
-                value={formData.domain}
-                onChange={handleInputChange}
-                className='h-8 sm:h-10 w-full sm:w-96 rounded mb-4 p-5 bg-gray-200'
-              />
-              <h1 className='font-bold'>What You Need</h1>
-              <input
-                type='text'
-                name='needs'
-                placeholder='logo, website, branding'
-                value={formData.needs}
-                onChange={handleInputChange}
-                className='h-8 sm:h-10 w-full sm:w-96 rounded mb-4 p-5 bg-gray-200'
-                required
-              />
+              {[
+                { label: 'Please enter your Name', name: 'name', type: 'text', placeholder: 'Jibin K Job' },
+                { label: 'Email', name: 'email', type: 'email', placeholder: 'example@gmail.com' },
+                { label: 'Phone', name: 'phone', type: 'number', placeholder: '7305451111' },
+                { label: 'Domain', name: 'domain', type: 'text', placeholder: 'www.example.com' },
+                { label: 'What You Need', name: 'needs', type: 'text', placeholder: 'logo, website, branding' },
+              ].map((input) => (
+                <React.Fragment key={input.name}>
+                  <h1 className='font-bold'>{input.label}</h1>
+                  <input
+                    type={input.type}
+                    name={input.name}
+                    placeholder={input.placeholder}
+                    value={formData[input.name]}
+                    onChange={handleInputChange}
+                    className='h-8 sm:h-10 w-full sm:w-96 rounded mb-4 p-5 bg-gray-200'
+                    required={['name', 'email', 'phone', 'needs'].includes(input.name)}
+                  />
+                </React.Fragment>
+              ))}
               <h1 className='font-bold'>Description</h1>
               <textarea
                 name='description'
@@ -143,7 +105,7 @@ const Getform = () => {
               />
             </div>
             <div className="flex justify-center">
-              <Button text="Submit" />
+              <Button text="Submit" type="submit" />
             </div>
           </form>
 
