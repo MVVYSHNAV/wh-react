@@ -20,34 +20,40 @@ const Meetus = () => {
   const handleMessageChange = (e) => setMessage(e.target.value);
 
   const handleSubmit = async () => {
-    console.log('pointing to data')
-    
     // Clear previous messages
     setSuccessMessage('');
     setErrorMessage('');
-    console.log('pointing to data')
+  
+    // Validate input fields
+    if (!email.trim() || !message.trim()) {
+      setErrorMessage('Please fill in both the email and message fields.');
+      return;
+    }
+  
+    console.log('pointing to data');
+    
     // Get current date and time in the format needed for Google Sheets
     const currentDateTime = new Date().toLocaleString();
-
+  
     const newRow = {
       Email: email,
       Message: message,
       Date_Time: currentDateTime,
     };
-
+  
     const SCRIPT_URL = import.meta.env.VITE_SCRIPT_URL; // Ensure this is set in your environment variables
     const Form = new FormData();
-    Form.append('Email',newRow.Email)
-    Form.append('Description',newRow.Message)
-    Form.append('Date_Time',newRow.Date_Time)
-
+    Form.append('Email', newRow.Email);
+    Form.append('Description', newRow.Message);
+    Form.append('Date_Time', newRow.Date_Time);
+  
     try {
       await fetch(SCRIPT_URL, {
         mode: 'no-cors',
         method: 'POST',
         body: Form,
       });
-
+  
       setSuccessMessage('Form submitted successfully! We will catch up with you within 24 hours.');
       setEmail('');
       setMessage('');
