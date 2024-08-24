@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import Navbar from '../Navbar/Navbar';
 import Button from '../Button/Button';
+import { Description } from '@mui/icons-material';
 
 const Getform = () => {
   const [formData, setFormData] = useState({
     name: '',
     companyName: '',
+    phone:'',
     email: '',
     domain: '',
     needs: '',
@@ -19,13 +21,33 @@ const Getform = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit =async (e) => {
     e.preventDefault();
-
-    const jsonData = JSON.stringify(formData);
-
-    console.log('JSON Data:', jsonData);
-
+    
+    const newRow={
+      Name:formData.name,
+      Email:formData.email,
+      Phone:formData.phone,
+      Company_Name:formData.companyName,
+      Domain:formData.domain,
+      What_need:formData.needs,
+      Description:formData.description
+    }
+    
+    const SCRIPT_URL=import.meta.env.VITE_SCRIPT_URL;
+    const Form=new FormData();
+    Form.append("Name",newRow.Name);
+    Form.append("Email",newRow.Email);
+    Form.append("Phone",newRow.Phone);
+    Form.append("Company_Name",newRow.Company_Name);
+    Form.append("Domain",newRow.Domain);
+    Form.append("What_need",newRow.What_need);
+    Form.append("Description",newRow.Description);
+    const res=await fetch(SCRIPT_URL,{
+      mode:"no-cors",
+      method:"POST",
+      body: Form
+    })
     setShowSuccessMessage(true);
 
 
@@ -33,10 +55,13 @@ const Getform = () => {
       name: '',
       companyName: '',
       email: '',
+      phone: '',
       domain: '',
       needs: '',
       description: ''
     });
+
+    
   };
 
   return (
@@ -75,6 +100,16 @@ const Getform = () => {
                 name='email'
                 placeholder='example@gmail.com'
                 value={formData.email}
+                onChange={handleInputChange}
+                className='h-8 sm:h-10 w-full sm:w-96 rounded mb-4 p-5 bg-gray-200'
+                required
+              />
+              <h1 className='font-bold'>Phone</h1>
+              <input
+                type='number'
+                name='phone'
+                placeholder='7305451111'
+                value={formData.phone}
                 onChange={handleInputChange}
                 className='h-8 sm:h-10 w-full sm:w-96 rounded mb-4 p-5 bg-gray-200'
                 required

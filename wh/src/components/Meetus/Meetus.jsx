@@ -45,18 +45,7 @@ const Meetus = () => {
     }
   };
 
-  // useEffect hook to hide the success message after a few seconds
-  useEffect(() => {
-    if (successMessage) {
-      const timer = setTimeout(() => {
-        setSuccessMessage('');
-      }, 8000); // Hide after 3 seconds
-
-      // Cleanup function to clear the timeout
-      return () => clearTimeout(timer);
-    }
-  }, [successMessage]);
-
+  
   return (
     <div
       id="Meetus"
