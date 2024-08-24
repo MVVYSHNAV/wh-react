@@ -1,12 +1,12 @@
+import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-
 import { Pagination, Navigation, Autoplay } from 'swiper/modules';
 import { motion } from 'framer-motion';
-import React from 'react';
-import Gst from '../../assets/gst.png'; 
+
+import Gst from '../../assets/gst.png';
 import TaxP from '../../assets/taxplan.png';
 import InternalAudit from '../../assets/internaladuit.png';
 import Bookkeeping from '../../assets/bookkeeping.png';
@@ -33,7 +33,7 @@ const services = [
     img: InternalAudit,
     title: 'Internal Audit',
     description:
-      'Conduct comprehensive internal audits to evaluate the effectiveness of internal controls, risk management, and governance processes, ensuring financial integrity and regulatory compliance',
+      'Conduct comprehensive internal audits to evaluate the effectiveness of internal controls, risk management, and governance processes, ensuring financial integrity and regulatory compliance.',
   },
   {
     img: Bookkeeping,
@@ -51,7 +51,7 @@ const services = [
     img: ResearchR,
     title: 'Research Report',
     description:
-      ' Prepare detailed research reports on market trends, financial performance, and industry analysis to support informed decision-making.',
+      'Prepare detailed research reports on market trends, financial performance, and industry analysis to support informed decision-making.',
   },
   {
     img: Logod,
@@ -75,17 +75,16 @@ const services = [
 
 const Whatwedo = () => {
   return (
-    <div id='Whatwedo' className="relative overflow-hidden bg-gray-100 dark:bg-gray-950 dark:text-gray-400 md:p-16 p-9">
+    <div id="Whatwedo" className="relative overflow-hidden bg-gray-100 dark:bg-gray-950 dark:text-gray-400 md:p-16 p-9">
       <div>
         <h1 className="text-xl md:text-2xl font-bold font-BebasNeue mt-10 text-black dark:text-gray-400 ml-5">
           WHAT WE DO
         </h1>
       </div>
-      <div className="items-center text-center sm:text-2xl font-BebasNeue mt-10 mb-10">
-        <h1 className='text-black dark:text-gray-400'>Services</h1>
+      <div className="text-center sm:text-2xl font-BebasNeue mt-10 mb-10">
+        <h2 className="text-black dark:text-gray-400">Services</h2>
         <p>
-          We provide a comprehensive range of services designed to support your
-          financial and branding needs.
+          We provide a comprehensive range of services designed to support your financial and branding needs.
         </p>
       </div>
 
@@ -122,11 +121,11 @@ const Whatwedo = () => {
             >
               <img
                 src={service.img}
-                alt={`${service.title} image`}
+                alt={`${service.title} illustration`}
                 className="h-32 w-full object-cover rounded-t-3xl"
               />
               <div className="text-white p-4">
-                <h1 className="font-BebasNeue text-2xl mb-2">{service.title}</h1>
+                <h3 className="font-BebasNeue text-2xl mb-2">{service.title}</h3>
                 <p className="font-Roboto font-bold text-sm">
                   {service.description}
                 </p>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Contactus from '../../assets/contactus.png';
 import Button from '../Button/Button';
 import FacebookSharpIcon from '@mui/icons-material/FacebookSharp';
@@ -8,6 +8,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import CallIcon from '@mui/icons-material/Call';
+import { Email } from '@mui/icons-material';
 
 const Meetus = () => {
   const [email, setEmail] = useState('');
@@ -19,33 +20,43 @@ const Meetus = () => {
   const handleMessageChange = (e) => setMessage(e.target.value);
 
   const handleSubmit = async () => {
+    console.log('pointing to data')
+    
     // Clear previous messages
     setSuccessMessage('');
     setErrorMessage('');
+    console.log('pointing to data')
+    // Get current date and time in the format needed for Google Sheets
+    const currentDateTime = new Date().toLocaleString();
+
+    const newRow = {
+      Email: email,
+      Message: message,
+      Date_Time: currentDateTime,
+    };
+
+    const SCRIPT_URL = import.meta.env.VITE_SCRIPT_URL; // Ensure this is set in your environment variables
+    const Form = new FormData();
+    Form.append('Email',newRow.Email)
+    Form.append('Description',newRow.Message)
+    Form.append('Date_Time',newRow.Date_Time)
 
     try {
-      const response = await fetch('/api/contact', {
+      await fetch(SCRIPT_URL, {
+        mode: 'no-cors',
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, message }),
+        body: Form,
       });
 
-      const result = await response.json();
-
-      if (response.ok && result.success) {
-        setSuccessMessage('Form submitted successfully! We will catch up with you within 24 hours.');
-        setEmail('');
-        setMessage('');
-      } else {
-        setErrorMessage('Failed to submit message.');
-      }
+      setSuccessMessage('Form submitted successfully! We will catch up with you within 24 hours.');
+      setEmail('');
+      setMessage('');
     } catch (error) {
       console.error('Error during form submission:', error);
       setErrorMessage('Failed to submit message.');
     }
   };
 
-  
   return (
     <div
       id="Meetus"

@@ -15,7 +15,7 @@ import Aboutus from './components/Whoweare/Aboutus';
 
 
 const Main =() => {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
 
   const handleDarkMode = () => {
     setDarkMode(!darkMode);

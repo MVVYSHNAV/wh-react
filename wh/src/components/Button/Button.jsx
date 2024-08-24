@@ -13,7 +13,8 @@ const Button = ({
   paddingY = 'py-3', 
   shadow = 'shadow-sm', 
   opacity = 'opacity-100', 
-  additionalClasses = '' 
+  additionalClasses = '' ,
+  onClick
 }) => {
   return (
     <div className={`relative z-20 mx-auto flex justify-center ${additionalClasses}`}>
@@ -24,6 +25,7 @@ const Button = ({
           text-sm
           md:text-xl
           `}
+          onClick={onClick}
       >
         {text}
       </motion.button>
