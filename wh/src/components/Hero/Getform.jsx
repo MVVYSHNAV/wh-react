@@ -68,13 +68,13 @@ const Getform = () => {
   return (
     <>
       <Navbar hideDarkMode />
-      <div className='relative'>
-        <div id='getform' className="h-[900px] sm:h-[800px] overflow-hidden mt-20 sm:mt-5 md:p-16 p-5">
-          <form onSubmit={handleSubmit} className="relative z-10 bg-white bg-opacity-75 p-8 rounded-lg">
-            <h1 className='sm:text-2xl text-xl font-BebasNeue p-10'>
+      <div className="bg-gray-800 min-h-screen flex flex-col items-center pt-20">
+        <div className="w-full max-w-4xl text-white bg-gray-700 bg-opacity-95 rounded-lg p-8 md:p-20 m-5">
+          <form onSubmit={handleSubmit} className="space-y-8">
+            <h1 className="text-xl sm:text-2xl font-BebasNeue text-center mb-5">
               Together, We Create the Future You Envision.
             </h1>
-            <div className='grid grid-cols-2 gap-3 p-5 pl-10 justify-center items-center'>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {[
                 { label: 'Please enter your Name', name: 'name', type: 'text', placeholder: 'Jibin K Job' },
                 { label: 'Email', name: 'email', type: 'email', placeholder: 'example@gmail.com' },
@@ -83,35 +83,35 @@ const Getform = () => {
                 { label: 'What You Need', name: 'needs', type: 'text', placeholder: 'logo, website, branding' },
               ].map((input) => (
                 <React.Fragment key={input.name}>
-                  <h1 className='font-bold'>{input.label}</h1>
+                  <label className="font-bold">{input.label}</label>
                   <input
                     type={input.type}
                     name={input.name}
                     placeholder={input.placeholder}
                     value={formData[input.name]}
                     onChange={handleInputChange}
-                    className='h-8 sm:h-10 w-full sm:w-96 rounded mb-4 p-5 bg-gray-200'
+                    className="w-full h-10 rounded p-2 bg-gray-200"
                     required={['name', 'email', 'phone', 'needs'].includes(input.name)}
                   />
                 </React.Fragment>
               ))}
-              <h1 className='font-bold'>Description</h1>
+              <label className="font-bold">Description</label>
               <textarea
-                name='description'
-                placeholder='Describe your needs'
+                name="description"
+                placeholder="Describe your needs"
                 value={formData.description}
                 onChange={handleInputChange}
-                className='h-10 sm:h-16 w-full sm:w-96 rounded mb-4 p-2 bg-gray-200'
+                className="w-full h-20 md:h-24 rounded p-2 bg-gray-200"
               />
             </div>
-            <div className="flex justify-center">
+            <div className="flex justify-center mt-8">
               <Button text="Submit" type="submit" />
             </div>
           </form>
 
           {showSuccessMessage && (
-            <div className="p-4 text-green-800 bg-green-200 rounded-lg">
-              Form submitted successfully! We will catch up with you within 24 hours
+            <div className="mt-6 p-4 text-green-800 bg-green-200 rounded-lg text-center">
+              Form submitted successfully! We will catch up with you within 24 hours.
             </div>
           )}
         </div>

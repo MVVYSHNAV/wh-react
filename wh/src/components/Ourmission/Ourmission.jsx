@@ -1,7 +1,6 @@
 import Ourimg from '../../assets/ourmission.png';
-import Button from '../Button/Button';
 import { motion } from 'framer-motion';
-import ToolTip from '../extra/extra';
+
 
 const OurMission = () => {
   return (
@@ -30,12 +29,6 @@ const OurMission = () => {
             </p>
           </div>
         </motion.div>
-      </div>
-      
-      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 sm:top-[75%] sm:left-[85%] z-20">
-        <ToolTip tooltip="404 error">
-          <Button text="Learn More" />
-        </ToolTip>
       </div>
     </div>
   );
