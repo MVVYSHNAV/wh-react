@@ -11,7 +11,7 @@ const Aboutus = () => {
     <>
       <div className="bg-gray-800 text-gray-200 min-h-screen">
         <Navbar hideDarkMode />
-        <div className="container mx-auto px-5 md:px-16 py-10">
+        <div className="container mx-auto px-5 md:px-52 py-10 mt-5 ">
           <div className="mt-12">
             <h1 className="text-3xl font-BebasNeue">About Us</h1>
           </div>
