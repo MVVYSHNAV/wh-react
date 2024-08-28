@@ -54,7 +54,7 @@ const Hero = () => {
         <div className="flex items-center justify-center h-full">
           <motion.img
             src={Smile}
-            alt="Smiling Man"
+            alt="background img Smiling Man"
             className="absolute bottom-0 max-w-xl md:max-w-2xl h-auto z-10"
             animate={{
               x: 0,
@@ -74,7 +74,7 @@ const Hero = () => {
         <div className="flex items-end justify-end">
           <img
             src={build}
-            alt="Building Illustration"
+            alt="Building Illustration image"
             className="absolute top-60 w-52 right-[10%] hidden md:block z-10"
           />
         </div>

@@ -1,5 +1,10 @@
 import React from 'react';
 import Navbar from '../Navbar/Navbar';
+import Footer from '../Footer/Footer';
+import ImageCard from '../extra/ImageCard';
+import bgimag from '../../assets/vyshnavimg.png';
+import bgimj from '../../assets/jibinimg.png';
+import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 
 const Aboutus = () => {
   return (
@@ -40,9 +45,38 @@ const Aboutus = () => {
             </ul>
           </div>
         </div>
-            <div>
-                  
-            </div>
+        <div> 
+          <h1 className='text-white bg-clip-text text-center text-3xl font-BebasNeue'> " Our Team " </h1>
+          <div className="flex flex-wrap justify-center gap-4 p-4 mt-10">
+            <ImageCard imgSrc={bgimj}>
+              <h3 className="text-lg md:text-xl font-BebasNeue">Jibin K Job</h3>
+              <h2 className="text-sm md:text-lg font-semibold text-gray-200">FOUNDER</h2>
+              <p className="text-xs md:text-sm">Bachelor of Science in Electronics, Mathematics, and Computer Science</p>
+              <a href="https://www.linkedin.com/in/jibinkjob170600" target="_blank" rel="noopener noreferrer">
+                <OpenInNewIcon className='text-white' />  LinkdIn
+              </a>
+            </ImageCard>
+
+            <ImageCard imgSrc={bgimag}>
+              <h3 className="text-lg md:text-xl font-BebasNeue">Vyshnav MV</h3>
+              <h2 className="text-sm md:text-lg font-semibold text-gray-200">CEO</h2>
+              <p className="text-xs md:text-sm">Masters in Computer Application</p>
+              <a href='https://www.linkedin.com/in/vyshnav-mv-b138b4191' target="_blank" rel="noopener noreferrer">
+                <OpenInNewIcon className='text-white' /> LinkdIn
+              </a>
+            </ImageCard>
+
+            <ImageCard>
+              <h3 className="text-lg md:text-xl font-BebasNeue">Yadu Krishna</h3>
+              <h2 className="text-sm md:text-lg font-semibold text-gray-200">CFO</h2>
+              <p className="text-xs md:text-sm">xxxxx</p>
+              <a href="#" target="_blank" rel="noopener noreferrer">
+                <OpenInNewIcon className='text-white' />  LinkdIn
+              </a>
+            </ImageCard>
+          </div>
+        </div>
+        <Footer bgColor='bg-gray-800' textC='white' />
       </div>
     </>
   );

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Navbar from '../Navbar/Navbar';
 import Button from '../Button/Button';
+import Footer from '../Footer/Footer';
 
 const Getform = () => {
   const [formData, setFormData] = useState({
@@ -90,7 +91,7 @@ const Getform = () => {
                     placeholder={input.placeholder}
                     value={formData[input.name]}
                     onChange={handleInputChange}
-                    className="w-full h-10 rounded p-2 bg-gray-200"
+                    className="w-full h-10 rounded p-2 bg-gray-200 text-black"
                     required={['name', 'email', 'phone', 'needs'].includes(input.name)}
                   />
                 </React.Fragment>
@@ -101,7 +102,7 @@ const Getform = () => {
                 placeholder="Describe your needs"
                 value={formData.description}
                 onChange={handleInputChange}
-                className="w-full h-20 md:h-24 rounded p-2 bg-gray-200"
+                className="w-full h-20 md:h-24 rounded p-2 text-black bg-gray-200"
               />
             </div>
             <div className="flex justify-center mt-8">
@@ -116,6 +117,7 @@ const Getform = () => {
           )}
         </div>
       </div>
+      <Footer bgColor="bg-gray-800" textC="text-white" />
     </>
   );
 };

@@ -8,7 +8,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import CallIcon from '@mui/icons-material/Call';
-import { Email } from '@mui/icons-material';
+
 
 const Meetus = () => {
   const [email, setEmail] = useState('');
@@ -113,7 +113,7 @@ const Meetus = () => {
         </div>
 
         <div className="flex flex-col items-center sm:items-start">
-          <img src={Contactus} alt="contact" className="w-full h-auto" />
+          <img src={Contactus} alt="contact image" className="w-full h-auto" />
           <div className="mt-5 text-center sm:text-left">
             <h1 className='sm:text-2xl font-BebasNeue flex items-center sm:justify-start justify-center'>
               <LocationOnIcon className="text-red-500 w-8 h-8" />
@@ -122,11 +122,10 @@ const Meetus = () => {
             <h1 className='sm:text-2xl font-BebasNeue flex items-center sm:justify-start justify-center' > <CallIcon className='w-8 h-8' /> 62386 63883</h1>
             <h1 className='sm:text-2xl font-BebasNeue mt-1'>Stay Connected with WizardHorizon</h1>
             <div className='flex justify-center sm:justify-start mt-2'>
-              <FacebookSharpIcon className='m-2 w-8 h-8' />
-              <LinkedInIcon className='m-2 w-8 h-8' />
-              <XIcon className='m-2 w-8 h-8' />
-              <InstagramIcon className='m-2 w-8 h-8' />
-              <WhatsAppIcon className='m-2 w-8 h-8' />
+            <a href='https://www.linkedin.com/in/wizard-horizon-19a698325'>  <LinkedInIcon className='m-2 w-8 h-8' /> </a> 
+             <a href='https://www.facebook.com/profile.php?id=61564983183570'>  <FacebookSharpIcon className='m-2 w-8 h-8' /> </a>
+             <a href='https://x.com/WizardHorizon'>  <XIcon className='m-2 w-8 h-8' /> </a> 
+             <a href='https://www.instagram.com/wizardhorizon/'>  <InstagramIcon className='m-2 w-8 h-8' /> </a>
             </div>
             <p className='font-Roboto font-bold mt-3'>Follow us today and be a part of the WizardHorizon journey</p>
           </div>

@@ -12,7 +12,7 @@ import Whatwedo from './components/Whatwedo/Whatwedo';
 // import Whychooseus from './components/Whychooseus/Whychooseus';
 import Getform from './components/Hero/Getform';
 import Aboutus from './components/Whoweare/Aboutus';
-
+import { SpeedInsights } from '@vercel/speed-insights/react';
 
 const Main =() => {
   const [darkMode, setDarkMode] = useState(true);
@@ -23,6 +23,7 @@ const Main =() => {
 
   return (
     <div className={`${darkMode ? "dark" : ""} font-Roboto`}> 
+    <SpeedInsights />
       <Navbar handleDarkMode={handleDarkMode} darkMode={darkMode} />
       <Hero/>
       <Ourmission/>
