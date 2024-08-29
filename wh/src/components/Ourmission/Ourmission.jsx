@@ -24,7 +24,7 @@ const OurMission = () => {
           <div className="flex flex-col items-center md:items-start justify-center p-5 sm:p-10">
             <p className="sm:text-3xl text-lg font-regular font-BebasNeue text-black dark:text-white text-justify md:text-left whitespace-normal">
               Our mission is to simplify your business processes and amplify your brand. We provide 
-              <span className='text-gray-500'> comprehensive solutions, including document management, web design, graphic design, and digital marketing.</span> 
+              <span className='dark:text-fuchsia-300  text-fuchsia-600'> comprehensive solutions, including document management, web design, graphic design, and digital marketing.</span> 
               Our goal is to deliver high-quality, tailored services that drive growth and success for your business.
             </p>
           </div>

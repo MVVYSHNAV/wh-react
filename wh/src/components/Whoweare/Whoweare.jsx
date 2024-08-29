@@ -25,7 +25,7 @@ const Ourmission = () => {
             transition={{ duration: 2 }}
           >
             <p className="sm:text-3xl text-lg font-regular font-BebasNeue text-black dark:text-white text-justify md:text-left whitespace-normal">
-              We are a full-service agency dedicated to enhancing your business’s presence and efficiency. We specialize in <span className='text-gray-500'>document management, web design, graphic design, and digital marketing.</span> Our team of experts combines creativity with strategy to deliver customized solutions that help you stand out and succeed in a competitive market.
+              We are a full-service agency dedicated to enhancing your business’s presence and efficiency. We specialize in <span className='dark:text-fuchsia-300  text-fuchsia-600'>document management, web design, graphic design, and digital marketing.</span> Our team of experts combines creativity with strategy to deliver customized solutions that help you stand out and succeed in a competitive market.
             </p>
           </motion.div>
           <div className="absolute bottom-4 left-1/2 mt-10 transform -translate-x-1/2 sm:top-[75%] sm:left-[85%] z-20">

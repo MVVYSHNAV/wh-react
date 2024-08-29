@@ -16,7 +16,7 @@ const Prime = () => {
           >
             <h1 className="m-4 text-justify sm:text-4xl/tight text-xl/snug p-2 sm:w-4/5 font-regular font-BebasNeue text-black dark:text-white md:text-left whitespace-normal">
               Success is not just about what you accomplish, but about the impact you make along the way.
-              <span className='text-gray-400'> Each challenge you face is an opportunity to grow and each step you take brings you closer to your goals. </span>
+              <span className='dark:text-fuchsia-300  text-fuchsia-600'> Each challenge you face is an opportunity to grow and each step you take brings you closer to your goals. </span>
               Embrace the journey, stay focused, and remember that every small effort counts towards achieving something great.
             </h1>
           </motion.div>

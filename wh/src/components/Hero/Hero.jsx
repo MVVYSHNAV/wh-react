@@ -71,13 +71,13 @@ const Hero = () => {
             className="absolute bottom-0 w-full z-10"
           />
         </div>
-        <div className="flex items-end justify-end">
+        {/* <div className="flex items-end justify-end">
           <img
             src={build}
             alt="Building Illustration image"
             className="absolute top-60 w-52 right-[10%] hidden md:block z-10"
           />
-        </div>
+        </div> */}
         <div className="absolute top-[70%] left-[40%] drop-shadow-2xl transform -translate-x-1/2 -translate-y-1/2 z-10 md:hidden">
           <motion.div 
             initial={{ opacity: 0, x: -100 }}
