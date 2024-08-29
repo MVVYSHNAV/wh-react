@@ -4,7 +4,7 @@ import { FaMoon, FaSun } from "react-icons/fa";
 import { menuItems } from "../../constants";
 import logo from "../../assets/logo100.png";
 
-const Navbar = ({ handleDarkMode, darkMode, hideDarkMode, bgColor }) => {
+const Navbar = ({ handleDarkMode, darkMode, hideDarkMode, bgColor, customStyle }) => {
   const [toggleMenu, setToggleMenu] = useState(false);
   const [showNavbar, setShowNavbar] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -23,8 +23,7 @@ const Navbar = ({ handleDarkMode, darkMode, hideDarkMode, bgColor }) => {
       setShowNavbar(true);
     }
 
-    // Calculate opacity based on scroll position
-    const maxScroll = 300; // maximum scroll value before opacity becomes 1
+    const maxScroll = 300;
     const opacity = Math.min(currentScrollY / maxScroll, 1);
     setScrollOpacity(opacity);
 
@@ -48,9 +47,8 @@ const Navbar = ({ handleDarkMode, darkMode, hideDarkMode, bgColor }) => {
         showNavbar ? 'transform translate-y-0' : 'transform -translate-y-full z-10'
       }`}
       style={{
-        backgroundColor: bgColor ? bgColor : darkMode
-          ? `rgba(0, 0, 0, ${scrollOpacity})`
-          : `rgba(255, 255, 255, ${scrollOpacity})`,
+        backgroundColor: bgColor || (darkMode ? `rgba(0, 0, 0, ${scrollOpacity})` : `rgba(255, 255, 255, ${scrollOpacity})`),
+        ...customStyle, // Apply any custom styles passed from the parent component
       }}
     >
       <nav className='mx-auto flex max-w-6xl flex-col items-center justify-between rounded-xl shadow-2xl bg-transparent text-gray-400 px-10 py-3 dark:bg-transparent dark:text-gray-100 md:flex-row'>

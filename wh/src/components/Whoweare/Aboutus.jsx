@@ -11,7 +11,7 @@ const Aboutus = () => {
   return (
     <>
       <div className="bg-gray-800 text-gray-200 min-h-screen sm:bg-gradient-to-b sm:from-gray-900 sm:to-gray-800">
-        <Navbar hideDarkMode bgColor="bg-gray-900" />
+        <Navbar hideDarkMode customStyle={{ backgroundImage: 'url(path-to-your-image.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }} />
         <div className="container mx-auto px-5 md:px-52 py-10">
           {/* About Us content */}
           <div className="mt-24">
@@ -59,7 +59,7 @@ const Aboutus = () => {
               <h2 className="text-sm md:text-lg font-semibold text-gray-200">FOUNDER</h2>
               <p className="text-xs md:text-sm">Bachelor of Science in Electronics, Mathematics, and Computer Science</p>
               <a href="https://www.linkedin.com/in/jibinkjob170600" target="_blank" rel="noopener noreferrer">
-                <OpenInNewIcon className='text-white' />  LinkdIn
+                <OpenInNewIcon className='text-white' />  LinkedIn
               </a>
             </ImageCard>
 
@@ -68,16 +68,16 @@ const Aboutus = () => {
               <h2 className="text-sm md:text-lg font-semibold text-gray-200">CEO</h2>
               <p className="text-xs md:text-sm">Masters in Computer Application</p>
               <a href='https://www.linkedin.com/in/vyshnav-mv-b138b4191' target="_blank" rel="noopener noreferrer">
-                <OpenInNewIcon className='text-white' /> LinkdIn
+                <OpenInNewIcon className='text-white' /> LinkedIn
               </a>
             </ImageCard>
 
             <ImageCard imgSrc={bgimga}>
               <h3 className="text-lg md:text-xl font-BebasNeue">Yadu Krishna</h3>
               <h2 className="text-sm md:text-lg font-semibold text-gray-200">CFO</h2>
-              <p className="text-xs md:text-sm"> Chartered Accountant </p>
-              <a href="#" target="_blank" rel="noopener noreferrer">
-                <OpenInNewIcon className='text-white' />  LinkdIn
+              <p className="text-xs md:text-sm">Bachelor of Commerce, CA Intermediate Qualified</p>
+              <a href="https://www.linkedin.com/in/yadu-krishna-v" target="_blank" rel="noopener noreferrer">
+                <OpenInNewIcon className='text-white' />  LinkedIn
               </a>
             </ImageCard>
           </div>

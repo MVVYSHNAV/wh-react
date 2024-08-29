@@ -68,7 +68,7 @@ const Getform = () => {
 
   return (
     <>
-      <Navbar hideDarkMode />
+      <Navbar hideDarkMode customStyle={{ backgroundImage: 'url(path-to-your-image.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }} />
       <div className="bg-gray-800 min-h-screen flex flex-col items-center pt-20">
         <div className="w-full max-w-4xl text-white bg-gray-700 bg-opacity-95 rounded-lg p-8 md:p-20 m-5">
           <form onSubmit={handleSubmit} className="space-y-8">
@@ -80,7 +80,7 @@ const Getform = () => {
                 { label: 'Please enter your Name', name: 'name', type: 'text', placeholder: 'Jibin K Job' },
                 { label: 'Email', name: 'email', type: 'email', placeholder: 'example@gmail.com' },
                 { label: 'Phone', name: 'phone', type: 'number', placeholder: '7305451111' },
-                { label: 'Domain', name: 'domain', type: 'text', placeholder: 'www.example.com' },
+                { label: 'Domain', name: 'domain', type: 'text', placeholder: 'finance,IT,Graphic' },
                 { label: 'What You Need', name: 'needs', type: 'text', placeholder: 'logo, website, branding' },
               ].map((input) => (
                 <React.Fragment key={input.name}>
