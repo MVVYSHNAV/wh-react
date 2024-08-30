@@ -77,13 +77,13 @@ const Whatwedo = () => {
   return (
     <div id="Whatwedo" className="relative overflow-hidden bg-gray-100 dark:bg-gray-950 dark:text-gray-400 md:p-16 p-9">
       <div>
-        <h1 className="text-xl md:text-2xl font-bold font-BebasNeue mt-10 text-black dark:text-gray-400 ml-5">
+        <h1 className="text-xl md:text-2xl font-bold font-BebasNeue mt-10 text-black dark:text-gray-400 ml-5 ">
           WHAT WE DO
         </h1>
       </div>
-      <div className="text-center sm:text-2xl font-BebasNeue mt-10 mb-10">
-        <h2 className="text-black dark:text-gray-400">Services</h2>
-        <p>
+      <div className="text-center sm:text-2xl font-BebasNeue mt-10 mb-10 ">
+        <h2 className="text-black dark:text-gray-400  hover:text-gray-400 dark:hover:text-white">Services</h2>
+        <p className=' dark:hover:text-white  hover:text-gray-400'>
           We provide a comprehensive range of services designed to support your financial and branding needs.
         </p>
       </div>

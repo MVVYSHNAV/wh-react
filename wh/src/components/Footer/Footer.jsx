@@ -18,7 +18,7 @@ const Footer = ({ bgColor = 'bg-gray-100', textC = 'text-black' }) => {
       </div>
       <div className="absolute bottom-2 left-0 right-0 text-center px-4">
         <p className={`float-left ${textC} dark:text-white`}>© 2024 wizardhorizon</p>
-       <a href='mailto: info@wizardhorizon.com'> <p className={`float-right ${textC} dark:text-white`}>help@wizardhorizon.com</p> </a> 
+       <a href='mailto: info@wizardhorizon.com'> <p className={`float-right ${textC} dark:text-white`}>info@wizardhorizon.com</p> </a> 
       </div>
     </div>
   );

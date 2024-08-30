@@ -43,7 +43,7 @@ const Navbar = ({ handleDarkMode, darkMode, hideDarkMode, bgColor, customStyle }
 
   return (
     <header
-      className={`fixed left-0 right-0 top-5 z-50 px-5 md:px-16 transition-transform duration-300 ${
+      className={`fixed left-0 right-0 z-50 px-5 md:px-16 transition-transform duration-300 ${
         showNavbar ? 'transform translate-y-0' : 'transform -translate-y-full z-10'
       }`}
       style={{
@@ -53,7 +53,7 @@ const Navbar = ({ handleDarkMode, darkMode, hideDarkMode, bgColor, customStyle }
     >
       <nav className='mx-auto flex max-w-6xl flex-col items-center justify-between rounded-xl shadow-2xl bg-transparent text-gray-400 px-10 py-3 dark:bg-transparent dark:text-gray-100 md:flex-row'>
         <div className='flex w-full items-center justify-between md:flex-row'>
-          <a href='#'><img className='w-16' src={logo} alt="Logo" /></a>
+          <a href='#'><img className='w-14' src={logo} alt="Logo" /></a>
           <button
             className='cursor-pointer rounded-full bg-slate-600 p-2 text-gray-100 dark:bg-gray-100 dark:text-gray-900 md:hidden'
             onClick={handleToggleMenu}
