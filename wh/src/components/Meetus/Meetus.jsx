@@ -73,8 +73,8 @@ const Meetus = () => {
           MEET US
         </h1>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 mt-10 sm:gap-0 gap-10 ">
-        <div className="ml-5  hover:text-white">
+      <div className="grid grid-cols-1 md:grid-cols-2 mt-10 sm:gap-0 gap-10 ">
+        <div className="ml-5 dark:hover:text-white  hover:text-gray-500">
           <div className="font-BebasNeue sm:text-3xl mb-2">EMAIL</div>
           <input
             id="email"
@@ -115,19 +115,19 @@ const Meetus = () => {
         <div className="flex flex-col items-center sm:items-start">
           <img src={Contactus} alt="contact image" className="w-full h-auto" />
           <div className="mt-5 text-center sm:text-left">
-            <h1 className='sm:text-2xl font-BebasNeue flex items-center sm:justify-start justify-center  hover:text-white'>
+            <h1 className='sm:text-2xl font-BebasNeue flex items-center sm:justify-start justify-center  dark:hover:text-white  hover:text-gray-500'>
               <LocationOnIcon className="text-red-500 w-8 h-8" />
               IndraNagar | Bangalore, India
             </h1>
-            <h1 className='sm:text-2xl font-BebasNeue flex items-center sm:justify-start justify-center  hover:text-white' > <CallIcon className='w-8 h-8' /> 62386 63883</h1>
-            <h1 className='sm:text-2xl font-BebasNeue mt-1  hover:text-white'>Stay Connected with WizardHorizon</h1>
-            <div className='flex justify-center sm:justify-start mt-2 '>
-            <a href='https://www.linkedin.com/in/wizard-horizon-19a698325'>  <LinkedInIcon className='m-2 w-8 h-8  hover:text-white' /> </a> 
-             <a href='https://www.facebook.com/profile.php?id=61564983183570'>  <FacebookSharpIcon className='m-2 w-8 h-8  hover:text-white' /> </a>
-             <a href='https://x.com/WizardHorizon'>  <XIcon className='m-2 w-8 h-8  hover:text-white' /> </a> 
-             <a href='https://www.instagram.com/wizardhorizon/'>  <InstagramIcon className='m-2 w-8 h-8  hover:text-white' /> </a>
+            <h1 className='sm:text-2xl font-BebasNeue flex items-center sm:justify-start justify-center  dark:hover:text-white  hover:text-gray-500' > <CallIcon className='w-8 h-8' /> 62386 63883</h1>
+            <h1 className='sm:text-2xl font-BebasNeue mt-1  dark:hover:text-white  hover:text-gray-500'>Stay Connected with WizardHorizon</h1>
+            <div className='flex justify-center sm:justify-start mt-2  '>
+            <a href='https://www.linkedin.com/in/wizard-horizon-19a698325'>  <LinkedInIcon className='m-2 w-8 h-8  dark:hover:text-white  hover:text-gray-500' /> </a> 
+             <a href='https://www.facebook.com/profile.php?id=61564983183570'>  <FacebookSharpIcon className='m-2 w-8 h-8 dark:hover:text-white  hover:text-gray-500' /> </a>
+             <a href='https://x.com/WizardHorizon'>  <XIcon className='m-2 w-8 h-8  dark:hover:text-white  hover:text-gray-500' /> </a> 
+             <a href='https://www.instagram.com/wizardhorizon/'>  <InstagramIcon className='m-2 w-8 h-8  dark:hover:text-white  hover:text-gray-500' /> </a>
             </div>
-            <p className='font-Roboto font-bold mt-3  hover:text-white'>Follow us today and be a part of the WizardHorizon journey</p>
+            <p className='font-Roboto font-bold mt-3  dark:hover:text-white  hover:text-gray-500'>Follow us today and be a part of the WizardHorizon journey</p>
           </div>
         </div>
       </div>

@@ -48,7 +48,7 @@ const Navbar = ({ handleDarkMode, darkMode, hideDarkMode, bgColor, customStyle }
       }`}
       style={{
         backgroundColor: bgColor || (darkMode ? `rgba(0, 0, 0, ${scrollOpacity})` : `rgba(255, 255, 255, ${scrollOpacity})`),
-        ...customStyle, // Apply any custom styles passed from the parent component
+        ...customStyle,
       }}
     >
       <nav className='mx-auto flex max-w-6xl flex-col items-center justify-between rounded-xl shadow-2xl bg-transparent text-gray-400 px-10 py-3 dark:bg-transparent dark:text-gray-100 md:flex-row'>

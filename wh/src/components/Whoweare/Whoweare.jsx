@@ -1,8 +1,7 @@
 import React from 'react';
 import WWAimg from '../../assets/wwaimg.png';
-import Button from '../Button/Button';
+import KnowMoreButton from '../Button/btn';
 import { motion } from 'framer-motion';
-import { NavLink } from 'react-router-dom';
 
 const Ourmission = () => {
   return (
@@ -29,9 +28,8 @@ const Ourmission = () => {
             </p>
           </motion.div>
           <div className="absolute bottom-4 left-1/2 mt-10 transform -translate-x-1/2 sm:top-[75%] sm:left-[85%] z-20">
-            <NavLink to='/aboutus' className="relative z-20 mx-auto flex justify-center">
-              <Button text="Know More" />
-            </NavLink>
+          
+            <KnowMoreButton text="Know more" additionalClasses="sm:px-6" />
           </div>
         </div>
       </div>

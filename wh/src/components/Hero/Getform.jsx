@@ -23,7 +23,6 @@ const Getform = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Get current date and time in the format needed for Google Sheets
     const currentDateTime = new Date().toLocaleString();
 
     const newRow = {
@@ -59,7 +58,6 @@ const Getform = () => {
         description: '',
       });
 
-      // Success popup
       alert('Form submitted successfully! We will catch up with you within 24 hours.');
     } catch (error) {
       console.error('Error submitting the form:', error);

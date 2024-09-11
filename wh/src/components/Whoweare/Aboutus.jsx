@@ -23,7 +23,7 @@ const Aboutus = () => {
               At WizardHorizon, we are dedicated to transforming the way businesses operate and thrive in the digital age. As a premier business consulting firm, we leverage our expertise to provide innovative solutions that drive growth and efficiency for our clients.
             </p>
           </div>
-          {/* Other content sections */}
+         
           <div className="mt-10">
             <h3 className="text-xl font-BebasNeue">Our Story</h3>
             <p className="text-lg mt-4 font-regular font-Roboto text-white text-justify">
