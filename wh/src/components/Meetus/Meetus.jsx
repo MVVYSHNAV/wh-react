@@ -92,7 +92,7 @@ const Meetus = () => {
             value={message}
             onChange={handleMessageChange}
             placeholder="Enter your message"
-            className="h-20 sm:h-28 w-full sm:w-96 bg-gray-200 rounded p-2 mb-4"
+            className="h-20 sm:h-28 w-full sm:w-96 text-black bg-gray-200 rounded p-2 mb-4"
             required
           ></textarea>
 
