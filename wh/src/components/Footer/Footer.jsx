@@ -16,7 +16,7 @@ const Footer = ({ bgColor = 'bg-gray-100', textC = 'text-black' }) => {
           achieve their full potential through strategic insights and actionable solutions.
         </p>
       </div>
-      <div className="flex justify-between items-center mt-4">
+      <div className="flex flex-wrap gap-x-2 justify-between items-center mt-4">
         <p className={`${textC} dark:text-white`}>© 2024 wizardhorizon</p>
         <a href='mailto: info@wizardhorizon.com' className={`${textC} dark:text-white`}>
           info@wizardhorizon.com
