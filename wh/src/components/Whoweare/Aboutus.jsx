@@ -67,7 +67,7 @@ const Aboutus = () => {
               <h3 className="text-lg md:text-xl font-BebasNeue">___________</h3>
               <h2 className="text-sm md:text-lg font-semibold text-gray-200">CEO</h2>
               <p className="text-xs md:text-sm">Masters in Computer Application</p>
-              <a href='https://www.linkedin.com/in/vyshnav-mv-b138b4191' target="_blank" rel="noopener noreferrer">
+              <a href='' target="_blank" rel="noopener noreferrer">
                 <OpenInNewIcon className='text-white' /> LinkedIn
               </a>
             </ImageCard>
